@@ -212,10 +212,11 @@ parser.add_argument('analyses', nargs='+', metavar='analysis',
 
 rivet_remote_subdirectories={'2.2.0': '96aa6bd1c36a0891fb6a620919920090505466ef',
                              '2.2.1': '805d410d6fadd4efb8d0e6bdf5a930ec0fc1e848',
+                             '2.3.0': '086c7cd50a1906839b8440845077a39a0279ebb0',
                              'HEAD' : 'HEAD'}
 remote_arguments = parser.add_argument_group('remote file infection')
 remote_arguments.add_argument('-v', '--rivet-version',
-                              default='2.2.1',
+                              default='2.3.0',
                               choices=sorted(rivet_remote_subdirectories.keys()),
                               help='The rivet version for which to download'
                               + ' and infect the analyses.')
