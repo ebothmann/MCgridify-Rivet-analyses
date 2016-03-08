@@ -154,7 +154,7 @@ class AnalysisFileDownloader(AnalysisFileCollector):
         plotinfo_key: 'text/plain',
         refdata_key: 'text/plain',
         source_key: 'text/x-c++src'}
-    _expected_failure_type = 'text/html'  # 'failure' means the Tracker did not 
+    _expected_failure_type = 'text/html'  # 'failure' means the Tracker did not
                                           # find the file and therefore
                                           # returned a failure web page to us
 
@@ -173,7 +173,7 @@ class AnalysisFileDownloader(AnalysisFileCollector):
             anainfo_key:  data_url + 'anainfo/',
             plotinfo_key: data_url + 'plotinfo/',
             refdata_key:  data_url + 'refdata/',
-            source_key:   base_url + 'src/Analyses/'}                                      
+            source_key:   base_url + 'src/Analyses/'}
 
     def collect_file(self, key):
         return self.download_file(key)
@@ -213,10 +213,11 @@ parser.add_argument('analyses', nargs='+', metavar='analysis',
 rivet_remote_subdirectories={'2.2.0': '96aa6bd1c36a0891fb6a620919920090505466ef',
                              '2.2.1': '805d410d6fadd4efb8d0e6bdf5a930ec0fc1e848',
                              '2.3.0': '086c7cd50a1906839b8440845077a39a0279ebb0',
+                             '2.4.0': 'c77ff1b297a71e9ec14440cd2e549fb1c4924148',
                              'HEAD' : 'HEAD'}
 remote_arguments = parser.add_argument_group('remote file infection')
 remote_arguments.add_argument('-v', '--rivet-version',
-                              default='2.3.0',
+                              default='2.4.0',
                               choices=sorted(rivet_remote_subdirectories.keys()),
                               help='The rivet version for which to download'
                               + ' and infect the analyses.')
@@ -275,7 +276,7 @@ try:
             file_collector = AnalysisFileDownloader(analysis, target_dir=dtemp, commit_id=commit_id)
         file_collection = file_collector.collect_files()
 
-        # Replace every occurrence of the analysis name with our modified one 
+        # Replace every occurrence of the analysis name with our modified one
         for line in fileinput.input(files=file_collection.values(), inplace=1):
             sys.stdout.write(line.replace(analysis, "MCgrid_" + analysis))
 
