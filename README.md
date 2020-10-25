@@ -1,3 +1,5 @@
+*NOTE: This repository has been moved to https://gitlab.com/mcgrid/mcgridify-rivet-analyses.*
+
 # mcgridifyRivetAnalyses.py
 This script prepares existing [Rivet](rivet.hepforge.org) analyses for use with [MCgrid](mcgrid.hepforge.org):
 
